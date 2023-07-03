@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { categoryList } from "../../constants/data";
 
-function Category() {
-  const [category, setCategory] = useState();
-
-  console.log(category);
-
+function Category({ category, handleCategory }) {
+  
   return (
     <div>
-      
       {categoryList.map((category) => (
-        <div key={category.id} onClick={(e) => setCategory(category.value)} className="category-btn">
+        <div
+          key={category.id}
+          onClick={(e) => handleCategory(category.value)}
+          className="category-btn"
+        >
           {category.label}
         </div>
       ))}
-
     </div>
   );
 }

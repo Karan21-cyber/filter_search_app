@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 
@@ -6,13 +6,7 @@ function valuetext(value) {
   return `${value}°C`;
 }
 
-export default function PriceRange() {
-  const amount = 10000;
-  const [price , setPrice] = useState(amount);
-  
-  const handleProgress = (event , newValue) => {
-    setPrice(parseInt(amount * (newValue/100)));
-  }
+export default function PriceRange({price, handleChangePrice}) {
 
   return (
     <Box sx={{ width: 300 , display:"flex",justifyContent:"space-around" }}>
@@ -23,7 +17,7 @@ export default function PriceRange() {
         defaultValue={price}
         getAriaValueText={valuetext}
         color="secondary"
-        onChange = {handleProgress}
+        onChange = {handleChangePrice}
       />
       <p>{price}</p>
     </Box>

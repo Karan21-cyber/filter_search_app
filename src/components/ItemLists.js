@@ -1,9 +1,9 @@
 import React from "react";
-import { dataList } from "../constants/data";
 import StarIcon from "@mui/icons-material/Star";
 
-function ItemLists() {
+function ItemLists({dataList}) {
   return (
+    
     <div className="items-list">
       {dataList.map((items) => (
         <div key={items.id} className="card">

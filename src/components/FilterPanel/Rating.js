@@ -2,11 +2,11 @@ import React from 'react'
 import { ratingList } from "../../constants/data";
 
 
-function Rating() {
+function Rating({handleChangeRating}) {
   return (
     <div className="rating-container">
       {ratingList.map((rating) => (
-        <div key={rating.id} className='rating-box'>{rating.label}</div>
+        <div key={rating.id} className='rating-box' onClick={() => handleChangeRating(rating.value)}>{rating.label}</div>
       ))}
     </div>
   );
